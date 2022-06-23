@@ -1,0 +1,42 @@
+Leia um valor e faça um programa que coloque o valor lido na primeira posição de um vetor N[10]. Em cada posição subsequente, coloque o dobro do valor da posição anterior. Por exemplo, se o valor lido for 1, os valores do vetor devem ser 1,2,4,8 e assim sucessivamente. Mostre o vetor em seguida.
+
+Entrada
+A entrada contém um valor inteiro (V<=50).
+
+Saída
+Para cada posição do vetor, escreva "N[i] = X", onde i é a posição do vetor e X é o valor armazenado na posição i. O primeiro número do vetor N (N[0]) irá receber o valor de V.
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		double nota1, nota2, flag = 1;
+		while (flag == 1) {
+			
+			nota1 = sc.nextDouble();
+			while (nota1 > 10 || nota1 < 0) {
+				System.out.println("nota invalida");
+				nota1 = sc.nextDouble();
+			}
+			
+			nota2 = sc.nextDouble();
+			while (nota2 > 10 || nota2 < 0) {
+				System.out.println("nota invalida");
+				nota2 = sc.nextDouble();
+			}
+			
+			double media = (nota1 + nota2) / 2;
+			System.out.println(String.format("media = %.2f", media));
+			
+			System.out.println("novo calculo (1-sim 2-nao)");
+			flag = sc.nextInt();
+			while (flag != 1 && flag != 2) {
+				System.out.println("novo calculo (1-sim 2-nao)");
+				flag = sc.nextInt();
+			}
+		}
+    }
+	
+}
